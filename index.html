@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohan Gautam - Portfolio</title>
+    <style>
+        body {
+            background: rgba(0, 0, 0, 1);
+            font-family: 'poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .header {
+            position: fixed;
+            top: 0vh;
+            width: 100vw;
+            padding: 0vh 0vw;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background-color: rgba(255, 255, 255, 0.08);
+            border-bottom-left-radius: 5vw;
+            border-bottom-right-radius: 5vw;
+            border-bottom: 0.7vh solid rgba(0, 255, 255, 0.8);
+        }
+
+        .logo {
+            font-size: 4.5vh;
+        }
+
+        nav ul {
+            list-style: none;
+            padding-right: 1vw;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            background: transparent;
+        }
+
+        .logo {
+            padding-left: 3vw;
+            color: cyan;
+            text-decoration: none;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5vh 1vw;
+            display: block;
+        }
+
+        .home {
+            color: #666;
+            text-decoration: none;
+            padding: 0.5vh 1vw;
+            display: block;
+            background: cyan;
+            border-radius: 0.8vw;
+            border: 0.3vh solid black;
+        }
+
+        .home:hover {
+            box-shadow: 0vw 0vw 2vw cyan;
+        }
+
+        nav ul li a:hover {
+            text-shadow: 0 0 2vw cyan;
+            transform: scale(1.1) translateY(-0.5vh);
+            transition: transform 0.3s ease-in-out;
+            text-decoration: underline;
+        }
+
+        .footer {
+            color: #999;
+            bottom: 0;
+            text-align: center;
+            padding: 1rem 0;
+            background-color: transparent;
+        }
+
+        .fun {
+            color: white;
+        }
+
+        .content-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            margin: 10vh 0;
+            padding: 0 5vw;
+            color: white;
+        }
+
+        .content-text {
+            flex: 1;
+            padding-right: 2vw;
+            font-family: 'poppins', sans-serif;
+        }
+
+        .content-image {
+            flex: 0.8;
+            padding-left: 4vw;
+
+        }
+
+        .content-image:hover {
+            transform: scale(1.01) translateY(-1vh);
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .content-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 1vw;
+
+            box-shadow: 0 0 50vh rgba(165, 42, 42, 1);
+        }
+
+        .buttons {
+            margin-top: 2vh;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            background-color: cyan;
+            color: black;
+            padding: 1vh 2vw;
+            border-radius: 0.8vw;
+            border: 0.3vh solid black;
+            margin-right: 1vw;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .buttons a:hover {
+            background-color: white;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">Rohan Gautam</a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html" class="home">Home</a></li>
+                <li><a href="about.html" class="about">About Me</a></li>
+                <li><a href="projects.html" class="projects">Projects</a></li>
+                <li><a href="skills.html" class="skills">Skills</a></li>
+                <li><a href="contact.html" class="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>About Me</h2>
+            <br>
+        </section>
+        <section class="content-section">
+            <div class="content-text">
+                <h1>Welcome to My Portfolio</h1>
+                <p>👋 Hi, I’m @Rohan-Gautam, a dedicated Computer Science Engineering (CSE) student at VIT Bhopal, passionate about leveraging technology to create meaningful solutions.</p>
+                <p>💻 As a CSE student, I'm navigating the dynamic landscape of computer science, from algorithms and data structures to software engineering principles. Every day is a new opportunity to expand my knowledge base and apply theoretical concepts in practical scenarios.</p>
+                <p>💞️ I’m looking to collaborate on innovative projects that not only sharpen my skills but also contribute to pushing the boundaries of technology. Whether it's a coding project, a design challenge, or any exciting venture, count me in for the journey!</p>
+                <p>📚 Currently in the learning phase, I may have limited knowledge, but I am dedicated to expanding my skill set and understanding. I believe in the power of continuous learning and the exciting journey of discovery that comes with it.</p>
+                <br>
+                <div class="buttons">
+                    <a href="My First Resume.pdf" download>Download CV</a>
+                    <a href="contact.html">Contact Me</a>
+                </div>
+            </div>
+            <div class="content-image">
+                <img src="https://avatars.githubusercontent.com/u/136186521?v=4" alt="Rohan Gautam">
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Rohan Gautam. All rights reserved.</p>
+    </footer>
+</body>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const imageContainer = document.querySelector('.content-image');
+    let floating = true;
+    let direction = 1;
+    let position = 0;
+
+    function floatEffect() {
+        if (floating) {
+            position += 0.2 * direction;
+            if (position > 10 || position < -10) {
+                direction *= -1;
+            }
+            imageContainer.style.transform = `translateY(${position}px)`;
+            requestAnimationFrame(floatEffect);
+        }
+    }
+
+    floatEffect();
+});
+</script>
+
+
+</html>
