@@ -3,24 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Rohan Gautam - Portfolio</title>
-
     <style>
-
-    body {
-    background: rgba(0, 0, 0, 1);
-    font-family: 'poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    }
+        body {
+            background: rgba(0, 0, 0, 1);
+            font-family: 'poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
 
         .header {
             position: fixed;
-            top: 0vh;
-            width: 100vw;
-            padding: 0vh 0vw;
+            top: 0;
+            width: 100%;
+            padding: 1rem 0;
             text-align: center;
             display: flex;
             justify-content: space-between;
@@ -31,11 +28,15 @@
             border-bottom-right-radius: 5vw;
             border-bottom: 0.7vh solid rgba(0, 255, 255, 0.8);
         }
-    .logo{
-    font-size:4.5vh;
-    }
 
-    nav ul {
+        .logo {
+            font-size: 4.5vh;
+            padding-left: 3vw;
+            color: cyan;
+            text-decoration: none;
+        }
+
+        nav ul {
             list-style: none;
             padding-right: 1vw;
             display: flex;
@@ -43,12 +44,6 @@
             margin: 0;
             background: transparent;
         }
-
-    .logo {
-    padding-left: 3vw;
-    color: cyan;
-    text-decoration: none;
-    }
 
         nav ul li {
             margin: 0 1rem;
@@ -61,7 +56,7 @@
             display: block;
         }
 
-        .about{
+        .about {
             color: #666;
             text-decoration: none;
             padding: 0.5vh 1vw;
@@ -69,22 +64,20 @@
             background: cyan;
             border-radius: 0.8vw;
             border: 0.3vh solid black;
-
-            }
-
-            .about:hover{
-            box-shadow: 0vw 0vw 2vw  cyan ;
-            }
-
-        nav ul li a:hover {
-          text-shadow: 0 0 2vw cyan;
-          transform: scale(1.1) translateY(-0.5vh);
-          transition: transform 0.3s ease-in-out;
-          text-decoration: underline;
         }
 
+        .about:hover {
+            box-shadow: 0vw 0vw 2vw cyan;
+        }
 
-         .footer {
+        nav ul li a:hover {
+            text-shadow: 0 0 2vw cyan;
+            transform: scale(1.1) translateY(-0.5vh);
+            transition: transform 0.3s ease-in-out;
+            text-decoration: underline;
+        }
+
+        .footer {
             color: #999;
             bottom: 0;
             text-align: center;
@@ -92,17 +85,74 @@
             background-color: transparent;
         }
 
+        .fun {
+            color: white;
+        }
 
-    .fun{
-    color: white;
-    }
+        .content-section {
+            display: flex;
+            flex-direction: column; /* Changed to column layout */
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 9vh 10vw;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .content-section h2 {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 1em;
+        }
+
+        .content-text {
+            width: 100%; /* Take full width */
+            margin-bottom: 2em; /* Add space between sections */
+        }
+
+        .content-text p, .content-text ul {
+            margin-bottom: 1em; /* Add space between paragraphs and list */
+        }
+
+        .content-table {
+            width: 100%; /* Take full width */
+        }
+
+        .content-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .content-table th, .content-table td {
+            border: 1px solid white;
+            padding: 1em;
+            text-align: left;
+        }
+
+        .content-table th {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .content-table td {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .content-table th, .content-table td {
+            color: white;
+        }
+
+        .content-table tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .content-table tr:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
     </style>
 </head>
-
 <body>
     <header class="header">
         <a href="#" class="logo">Rohan Gautam</a>
-
         <nav class="navbar">
             <ul>
                 <li><a href="index.html" class="home">Home</a></li>
@@ -112,21 +162,68 @@
                 <li><a href="contact.html" class="contact">Contact</a></li>
             </ul>
         </nav>
-
     </header>
 
     <main>
-        <section>
-            <h2>About Me</h2>
-            <br>
-
-             </section>
+        <section class="content-section">
+            <div class="content-text">
+                <h2>About Me</h2>
+                <p>Hey there! I am a 3rd-year BTech student pursuing ____ at ____.</p>
+                <p>Here are a few things about me:</p>
+                <ul>
+                    <li>📚 Currently studying ____.</li>
+                    <li>💻 Passionate about ____.</li>
+                    <li>🌟 Achieved ____ in ____.</li>
+                    <li>🔍 Interested in ____.</li>
+                    <li>🎯 Goals include ____.</li>
+                </ul>
+                <p>Feel free to reach out to me if you have any questions or opportunities!</p>
+            </div>
+            <div class="content-table">
+                <table>
+                    <tr>
+                        <th>Category</th>
+                        <th>Details</th>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td>Rohan Gautam</td>
+                    </tr>
+                    <tr>
+                        <td>Education</td>
+                        <td>3rd-year BTech, ____ (College/University)</td>
+                    </tr>
+                    <tr>
+                        <td>Major</td>
+                        <td>____</td>
+                    </tr>
+                    <tr>
+                        <td>Interests</td>
+                        <td>____</td>
+                    </tr>
+                    <tr>
+                        <td>Achievements</td>
+                        <td>____</td>
+                    </tr>
+                    <tr>
+                        <td>Skills</td>
+                        <td>____</td>
+                    </tr>
+                    <tr>
+                        <td>Projects</td>
+                        <td>____</td>
+                    </tr>
+                    <tr>
+                        <td>Contact</td>
+                        <td>Email: ____<br>Phone: ____</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
         <p>&copy; 2024 Rohan Gautam. All rights reserved.</p>
     </footer>
-
 </body>
-
 </html>
