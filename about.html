@@ -17,7 +17,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 1rem 0;
+            padding: 0 0;
             text-align: center;
             display: flex;
             justify-content: space-between;
@@ -94,8 +94,8 @@
             flex-direction: column; /* Changed to column layout */
             align-items: flex-start;
             justify-content: flex-start;
-            padding: 9vh 10vw;
-            background-color: rgba(0, 0, 0, 1);
+            padding: 10vh 10vw;
+            background-color: rgba(0, 0, 0, 0);
             color: white;
         }
 
@@ -116,6 +116,7 @@
 
         .content-table {
             width: 100%; /* Take full width */
+            box-shadow: 0 0 5vh grey;
         }
 
         .content-table table {
@@ -148,6 +149,38 @@
         .content-table tr:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
+
+        .starfield {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+
+    .star {
+      position: absolute;
+      background-color: grey;
+      border-radius: 50%;
+      opacity: 0;
+    }
+
+    /* Animation */
+    @keyframes blink {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
     </style>
 </head>
 <body>
@@ -163,19 +196,19 @@
             </ul>
         </nav>
     </header>
-
+<div class="starfield" title="This is a starfield background."></div>
     <main>
         <section class="content-section">
             <div class="content-text">
                 <h2>About Me</h2>
-                <p>Hey there! I am a 3rd-year BTech student pursuing ____ at ____.</p>
+                <p>Hey there! I am a 3rd-year BTech student pursuing Bachelors in Technology (Computer Science & Engineering at VIT Bhopal University.</p>
                 <p>Here are a few things about me:</p>
                 <ul>
-                    <li>📚 Currently studying ____.</li>
-                    <li>💻 Passionate about ____.</li>
-                    <li>🌟 Achieved ____ in ____.</li>
-                    <li>🔍 Interested in ____.</li>
-                    <li>🎯 Goals include ____.</li>
+                    <li>📚 Currently studying Computer Science and Engineering.</li>
+                    <li>💻 Passionate about computers, technology, world.</li>
+                    <li>🌟 Achieved some little things that contributes to my skill development.</li>
+                    <li>🔍 Interested in computers, cars, adventure, hiking, bikes, etc.</li>
+                    <li>🎯 Goals include, obviously, getting a good job with a perfect work-life balance.</li>
                 </ul>
                 <p>Feel free to reach out to me if you have any questions or opportunities!</p>
             </div>
@@ -191,31 +224,31 @@
                     </tr>
                     <tr>
                         <td>Education</td>
-                        <td>3rd-year BTech, ____ (College/University)</td>
+                        <td>3rd-year BTech, VIT Bhopal University</td>
                     </tr>
                     <tr>
                         <td>Major</td>
-                        <td>____</td>
+                        <td>Computer Science & Engineering</td>
                     </tr>
                     <tr>
                         <td>Interests</td>
-                        <td>____</td>
+                        <td>computers, cars, adventure, hiking, bikes, etc.</td>
                     </tr>
                     <tr>
                         <td>Achievements</td>
-                        <td>____</td>
+                        <td>ERROR 404 NOT FOUND</td>
                     </tr>
                     <tr>
                         <td>Skills</td>
-                        <td>____</td>
+                        <td>JavaScript, Python, Java, C++, web dev, etc.</td>
                     </tr>
                     <tr>
                         <td>Projects</td>
-                        <td>____</td>
+                        <td>ALICE-AI Assistant, FIR-Sahayak, fun websites, pyqt applications, web apps, etc.</td>
                     </tr>
                     <tr>
                         <td>Contact</td>
-                        <td>Email: ____<br>Phone: ____</td>
+                        <td>Email: 582004rohangautam@example.com <br>Phone: +91 780 401 6050</td>
                     </tr>
                 </table>
             </div>
@@ -225,5 +258,51 @@
     <footer class="footer">
         <p>&copy; 2024 Rohan Gautam. All rights reserved.</p>
     </footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const starfield = document.querySelector(".starfield");
+
+      // Function to generate a random number within a range
+      function getRandomNumber(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      // Function to create a star element
+      function createStar() {
+        const star = document.createElement("div");
+        star.classList.add("star");
+        const isShootingStar = Math.random() > 0.95; // 5% chance of creating a shooting star
+        if (isShootingStar) {
+          star.classList.add("shooting-star");
+          star.style.animationDuration = `${getRandomNumber(2, 4)}s`; // Set animation duration for shooting stars
+        }
+        star.style.left = `${getRandomNumber(0, 100)}vw`;
+        star.style.top = `${getRandomNumber(0, 100)}vh`;
+        star.style.width = `${isShootingStar ? getRandomNumber(3, 5) : getRandomNumber(1, 2)}px`; // Larger width for shooting stars
+        star.style.height = `${isShootingStar ? getRandomNumber(3, 5) : getRandomNumber(1, 2)}px`; // Larger height for shooting stars
+        starfield.appendChild(star);
+      }
+
+      // Generate stars including shooting stars
+      for (let i = 0; i < 1000; i++) {
+        createStar();
+      }
+
+      // Function to make stars fade in and out
+      function blinkStars() {
+        const stars = document.querySelectorAll(".star");
+        stars.forEach((star) => {
+          const duration = getRandomNumber(2, 4); // Randomize duration for each star
+          star.style.animation = `blink ${duration}s infinite alternate`;
+        });
+      }
+
+      // Blink stars
+      blinkStars();
+    });
+
+</script>
+
 </body>
 </html>
