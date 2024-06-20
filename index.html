@@ -146,6 +146,42 @@
             background-color: white;
             transform: scale(1.05);
         }
+
+        /* Popup Notification Styles */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            max-width:30vw ;
+            transform: translate(-50%, -50%);
+            background-color: #444;
+            color: white;
+            padding: 1em;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none; /* Initially hidden */
+        }
+
+        .popup h3 {
+            margin-top: 0;
+        }
+
+        .popup p {
+            margin-bottom: 0;
+        }
+
+        .popup .close-btn {
+            position: absolute;
+            top: 0.5em;
+            right: 0.5em;
+            cursor: pointer;
+            color: white;
+            font-size: 1.2em;
+        }
+
+
+
     </style>
 </head>
 
@@ -190,6 +226,16 @@
     <footer class="footer">
         <p>&copy; 2024 Rohan Gautam. All rights reserved.</p>
     </footer>
+
+       <!-- Popup Notification -->
+    <div id="popup" class="popup">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <h3>Welcome to My Portfolio</h3>
+        <p>Thank you for visiting! Feel free to explore my projects and skills.</p>
+        <p>CAUTION!!!</p>
+        <p>Remember this is just a sample portfolio made in a few hours, it may have some unprofessional texts and content too.</p>
+    </div>
+
 </body>
 
 <script>
@@ -212,6 +258,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     floatEffect();
 });
+
+
+// Function to show popup when page loads
+window.onload = function() {
+    document.getElementById('popup').style.display = 'block';
+}
+
+// Function to close the popup
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
 </script>
 
 
