@@ -7,21 +7,19 @@
     <title>Rohan Gautam - Portfolio</title>
 
     <style>
-
-    body {
-    background: rgba(0, 0, 0, 1);
-    font-family: 'poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    }
-
+        body {
+            background: rgba(0, 0, 0, 1);
+            font-family: 'poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
 
         .header {
             position: fixed;
             top: 0vh;
             width: 100vw;
-            padding: 0vh 0vw;
+            padding: 1rem 0;
             text-align: center;
             display: flex;
             justify-content: space-between;
@@ -33,11 +31,14 @@
             border-bottom: 0.7vh solid rgba(0, 255, 255, 0.8);
         }
 
-    .logo{
-    font-size:4.5vh;
-    }
+        .logo {
+            font-size: 4.5vh;
+            padding-left: 3vw;
+            color: cyan;
+            text-decoration: none;
+        }
 
-    nav ul {
+        nav ul {
             list-style: none;
             padding-right: 1vw;
             display: flex;
@@ -45,12 +46,6 @@
             margin: 0;
             background: transparent;
         }
-
-    .logo {
-    padding-left: 3vw;
-    color: cyan;
-    text-decoration: none;
-    }
 
         nav ul li {
             margin: 0 1rem;
@@ -63,7 +58,7 @@
             display: block;
         }
 
-        .contact{
+        .contact {
             color: #666;
             text-decoration: none;
             padding: 0.5vh 1vw;
@@ -71,20 +66,18 @@
             background: cyan;
             border-radius: 0.8vw;
             border: 0.3vh solid black;
-
-            }
-
-            .contact:hover{
-            box-shadow: 0vw 0vw 2vw  cyan ;
-            }
-
-        nav ul li a:hover {
-          text-shadow: 0 0 2vw cyan;
-          transform: scale(1.1) translateY(-0.5vh);
-          transition: transform 0.3s ease-in-out;
-          text-decoration: underline;
         }
 
+        .contact:hover {
+            box-shadow: 0vw 0vw 2vw cyan;
+        }
+
+        nav ul li a:hover {
+            text-shadow: 0 0 2vw cyan;
+            transform: scale(1.1) translateY(-0.5vh);
+            transition: transform 0.3s ease-in-out;
+            text-decoration: underline;
+        }
 
         .footer {
             color: #999;
@@ -94,10 +87,65 @@
             background-color: transparent;
         }
 
+        .content-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 10vh 10vw;
+            background-color: rgba(0, 0, 0, 1);
+            color: white;
+        }
 
-    .fun{
-    color: white;
-    }
+        .content-section h2 {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 1em;
+        }
+
+        .content-text {
+            width: 100%;
+            margin-bottom: 2em;
+        }
+
+        .content-text p, .content-text ul {
+            margin-bottom: 1em;
+        }
+
+        .content-table {
+            width: 100%;
+        }
+
+        .content-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .content-table th, .content-table td {
+            border: 1px solid white;
+            padding: 1em;
+            text-align: left;
+        }
+
+        .content-table th {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .content-table td {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .content-table th, .content-table td {
+            color: white;
+        }
+
+        .content-table tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .content-table tr:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
     </style>
 </head>
 
@@ -118,11 +166,41 @@
     </header>
 
     <main>
-        <section>
-            <h2>About Me</h2>
-            <br>
-
-             </section>
+        <section class="content-section">
+            <div class="content-text">
+                <h2>Contact Me</h2>
+                <p>Feel free to reach out to me through any of the following methods:</p>
+            </div>
+            <div class="content-table">
+                <table>
+                    <tr>
+                        <th>Method</th>
+                        <th>Contact</th>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>582004rohangautam@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td>+91 7804016050</td>
+                    </tr>
+                    <tr>
+                        <td>Social Media</td>
+                        <td>
+                            <ul>
+                                <li>LinkedIn: <a href="https://www.linkedin.com/in/rohan-gautam-b33695250/" style="color: cyan;">Rohan Gautam</a></li>
+                    <li>Github: <a href="https://github.com/Rohan-Gautam" style="color: cyan;">Rohan-Gautam</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td>Earth, Solar System, Orion Arm, Milky Way<br>Local Group, Virgo Supercluster, Laniakea Supercluster, Universe</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
@@ -130,5 +208,4 @@
     </footer>
 
 </body>
-
 </html>
